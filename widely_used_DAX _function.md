@@ -39,5 +39,19 @@ ___
 
 
 ___
-* allselect --> Returns all the rows in a table, or all the values in a column, ignoring any filters that might have been applied inside the query, but keeping filters that come from outside.
->> syntex --> 
+* allselect --> all select remove all `filters` from `visual level` but not from `slicer level` if you apply slicer the filter will apply over it.
+>> syntex -->ALLSELECTED([TableNameOrColumnName], [ColumnName1], ...)
+
+___
+* all --> it is basic all function remove all the filters from `slicers` or `visuals` give the exact value (remove any filter)
+>> syntex --> ```ALL([TableNameOrColumnName], [ColumnName1], ...)```
+
+>>>eg data=calculate(all(sales))
+
+___
+* ALLEXCEPT --> this work as above function but it remove all filters except the filter passed to it.
+>>syntex --> ALLEXCEPT(TableName, ColumnName1, ...)
+
+>> eg -->ALLEXCEPT(financials,financials[Country])
+* remove all filter except filter on country column.
+___ 
