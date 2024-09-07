@@ -77,3 +77,42 @@ ___
 >> eg -->ALLEXCEPT(financials,financials[Country])
 * remove all filter except filter on country column.
 ___ 
+* SUMX  --> When we Need to find out the Calculation Row by Row then we use SUMX
+  >>sales_amount=SUMX(Sales,Sales[Unit Price]*Sales[QTY])
+
+here is an exmaple to illustrate SUMX and SUM and how they are different.
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Sales</th>
+      <th>Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>500</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>400</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>800</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>785</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+* Example --> Sum(sales)*sum(qty)
+* explain --> sum(500+400+800+785)* sum(2+3+6+5)=39760 ` this is sum and multiplication
+
+* eg2--> Sumx(sales*Qty)
+* explain --> sumx will do following thing (500*2+400*3+800*6+785*5)=10925
+* this one is correct way to get total 
+
