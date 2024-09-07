@@ -1,12 +1,34 @@
-# widely Used DAX functions 
+# DAX functions topics and formulas
+
+### calclated Column explaination 
+it expands table by creating `new column`, Stores along with `tables` and `consumes memory` but have `less analytical` capability.
+
+### measure explain 
+it summarized data into `single value` and calculated at `runtime`,store in `memory on temporarily` and `Rich analyics` Capabilites.
+* in measure we mostly use aggregator or Summarization functions
+* try to use more measures instead direct columns
+___
+## filter and Row Context
+#### row Context --> It Calculate Each Row while applying formula, with Value within Each row , for example doing sum of sales and cost will affect or calculated from each row of sales and cost.
+>> Profit = sum(sales,[sales amount]-[cost amount])
+
+
+#### filter context --> it is set of filter that applied before that table arrives for use
+>> total_sales=Sum(sales[Sales Amount])
+>> Applying filter from Filter pane/Visuals/Slicers (year=2017,country=India,City=Chennai)
+
+
+## widely Used DAX functions 
 
 * CALCULATE: Evaluates an expression in a modified filter context.
 >> syntex ``` calculate(<expression>,filter1,filter2)```
 >>>example:- let we have sales[sales Amount], sales[Region],sales[year]
 >>>we want max sales where region is india and year is 2014 then we canuse calculate
->>>it is similar to sQl's where
+>>>it is similar to sQl's `where`  
 
 >>>example :- ```calculate(max(sales[sales_amount]),sales[Region]="india",sales[year]=2014)```
+>>> we want sales from all region not only from india then we will use.
+>>> sales_from_all_locations=Calculate(sum(sales),all(region))
 
 ___
 
