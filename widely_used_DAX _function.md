@@ -115,4 +115,14 @@ here is an exmaple to illustrate SUMX and SUM and how they are different.
 * eg2--> Sumx(sales*Qty)
 * explain --> sumx will do following thing (500*2+400*3+800*6+785*5)=10925
 * this one is correct way to get total 
-
+___
+* divide :- it use to perform division between two numbers,when possibility that the denominator could be zero.
+>>> DIVIDE(numerator, denominator, [alternateResult])
+>>> numerator --> top part of Division
+>>> Denominator --> the bottom part of Division
+>>> alternate Result--> the value return when denominator is zero.
+>>>```Churn_rate=Divide(Calculate(countrows('customer_info'),customer_info['Churn]=1),countrows('customer_info'))```
+* calculate all values of countrow where churn is yes or 1
+* then divide it will total rows
+* it will provide %age of churn as measure
+* 
